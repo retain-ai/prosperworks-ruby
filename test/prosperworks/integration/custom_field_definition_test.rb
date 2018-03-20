@@ -16,6 +16,21 @@ class CustomFieldDefinitionTest < Minitest::Test
         assert_equal value, actual.send(key)
       end
     end
+    
+    case expected[:options]
+    when nil
+      assert_nil actual.options
+    else
+      expected[:options].zip(actual.options).each do |defined,option|
+        defined.each do |key, value|
+          if value.nil?
+            assert_nil option.send(key)
+          else
+            assert_equal value, option.send(key)
+          end
+        end
+      end
+    end
   end
   
   def setup
