@@ -18,5 +18,4 @@ module ProsperWorks
     end
 
   end
-
 end

@@ -4,6 +4,12 @@ module ProsperWorks
                   :rank
   end
   
+  class CustomFieldValue < Base
+    attr_accessor :field_name,
+                  :value
+                  :data_type
+  end
+  
   class CustomFieldDefinition < Base
   
 
