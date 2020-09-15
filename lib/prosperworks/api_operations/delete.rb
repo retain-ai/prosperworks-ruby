@@ -15,7 +15,7 @@ module ProsperWorks
 
       def handle_delete_response(response)
         result = handle_response(nil, response)
-        if result.is_a?(ProsperWorks::Errors)
+        if result.is_a?(ProsperWorks::Errors::Base)
           # pass the error along
           result
         else

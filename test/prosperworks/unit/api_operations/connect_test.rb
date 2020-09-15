@@ -65,5 +65,11 @@ class ConnectTest < Minitest::Test
 
     assert_equal Errors::Unprocessable, ProsperWorks::Contact.find(id)
   end
-
+  
+  def handle_multiple_response_error_handling
+    url = get_uri(ProsperWorks::Contact.api_name, 'search')
+    stub_request(:post, url).with(headers: headers).to_return(status: 500, body: "")
+    
+    assert_equal Errors::ServerError, ProsperWorks::Contact.search
+  end
 end
