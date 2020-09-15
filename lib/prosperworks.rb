@@ -33,6 +33,7 @@ require 'prosperworks/project'
 require 'prosperworks/task'
 require 'prosperworks/version'
 require 'prosperworks/webhook'
+require 'prosperworks/custom_field_definition'
 
 module ProsperWorks
 

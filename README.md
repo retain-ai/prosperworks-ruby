@@ -104,6 +104,7 @@ The following entity types are currently supported for list:
 * Pipeline
 * Pipeline Stage
 * Webhook
+* CustomFieldDefinition
 
 The response will either be an instance of `ProsperWorks::Errors`, or the entity itself. See the `handle_response` function in [connect.rb](lib/prosperworks/api_operations/connect.rb).
 

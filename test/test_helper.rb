@@ -351,5 +351,62 @@ module Helpers
       secret: { key_a: "value_a" }
     }
   end
-
+  
+  def custom_field_definition_list_payload
+    JSON.generate(custom_field_definition_list_details)
+  end
+  
+  def custom_field_definition_list_details
+    [
+      {
+        id: 1_007,
+        name: "Custom Dropdown Field",
+        data_type: "Dropdown",
+        available_on: ["company", "opportunity", "lead"],
+        options: [
+          {
+            id: 1_008,
+            name: "Option 1",
+            rank: 0
+          },
+          {
+            id: 1_009,
+            name: "Option 1",
+            rank: 0
+          }
+        ]
+      },
+      {
+        id: 1_010,
+        name: "Custom String Field",
+        data_type: "String",
+        available_on: ["company", "opportunity", "lead"]
+      }
+    ]
+  end
+  
+  def custom_field_definition_payload
+    JSON.generate(custom_field_definition_details)
+  end
+  
+  def custom_field_definition_details
+    {
+      id: 1_007,
+      name: "Custom Dropdown Field",
+      data_type: "Dropdown",
+      available_on: ["company", "opportunity", "lead"],
+      options: [
+        {
+          id: 1_008,
+          name: "Option 1",
+          rank: 0
+        },
+        {
+          id: 1_009,
+          name: "Option 1",
+          rank: 0
+        }
+      ]
+    }
+  end
 end
